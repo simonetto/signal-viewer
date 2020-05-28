@@ -1,0 +1,16 @@
+$grey-color: #efefef;
+
+.chart {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
