@@ -14,6 +14,7 @@ $grey-bg: #ececec;
         border-radius: 1em;
         background-color: $grey-bg;
         margin-bottom: 3em;
+        position: relative;
 
         .inner-bar {
             display: flex;
@@ -22,6 +23,7 @@ $grey-bg: #ececec;
             height: 100%;
             background-color: white;
             border-radius: 1em;
+            position: absolute;
         }
 
         .handle {

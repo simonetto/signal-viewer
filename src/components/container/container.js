@@ -5,14 +5,26 @@ import VerticalBar from '../verticalBar';
 import HorizontalBar from '../horizontalBar';
 
 class Container extends React.Component {
-    render() {
-        let model = {
+    constructor(props) {
+        super(props);
+        this.state = {
             xPosition : 0,
             yPosition : 0,
             xZoom : 0,
             yZoom : 0
         };
+    }
 
+    handleChange(model) {
+        this.setState({
+            xPosition : model.xPosition,
+            yPosition : model.yPosition,
+            xZoom : model.xZoom,
+            yZoom : model.yZoom
+        });
+    }
+
+    render() {
         return (
             <section className="main">
                 <div className="window">
@@ -21,10 +33,10 @@ class Container extends React.Component {
                         <div className="left">
                             <div className="top"></div>
                             <div className="bottom">
-                                    <VerticalBar model={model} />
+                                    <VerticalBar model={this.state} onChange={this.handleChange.bind(this)} />
                                 <div className="chart-box">
-                                    <Chart />
-                                    <HorizontalBar model={model} />
+                                    <Chart model={this.state} onChange={this.handleChange.bind(this)} />
+                                    <HorizontalBar model={this.state} onChange={this.handleChange.bind(this)} />
                                 </div>
                             </div>
                         </div>
