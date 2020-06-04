@@ -84,7 +84,7 @@ class HorizontalBar extends React.Component {
         <div className="h-bar">
             <div ref={this.bar} className="bar" onClick={(e) => this.onOuterBarClick(e)}>
                 <div ref={this.innerBar} className="inner-bar" style={{
-                    marginLeft : `${this.props.model.xPosition - 2}%`,
+                    marginLeft : `${Math.max(0, this.props.model.xPosition - 2)}%`,
                     width : this.state.innerWidth + '%'
                 }}>
                     <div className="handle upperHandle" onClick={(e) => this.onUpperHandleClick(e)}></div>
